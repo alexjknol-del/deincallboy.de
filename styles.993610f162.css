@@ -481,11 +481,11 @@ footer.site p { color: var(--muted-2); font-size: 0.9rem; }
 .profilkarte .pk-meta { font-size: 0.88rem; color: var(--muted-2); margin-bottom: 12px; }
 .profilkarte .pk-text { color: var(--muted); font-size: 0.93rem; margin-bottom: 14px; }
 .profilkarte .pk-fuss {
-  margin-top: auto; display: flex; justify-content: space-between; align-items: center;
-  gap: 12px; border-top: 1px solid var(--line-soft); padding-top: 14px;
+  margin-top: auto; display: flex; justify-content: space-between; align-items: baseline;
+  gap: 10px; border-top: 1px solid var(--line-soft); padding-top: 14px; flex-wrap: wrap;
 }
-.profilkarte .pk-tarif { font-family: var(--serif); color: var(--gold); font-size: 1.25rem; }
-.profilkarte .pk-mehr { font-size: 0.85rem; letter-spacing: 0.04em; color: var(--gold-soft); }
+.profilkarte .pk-tarif { font-family: var(--serif); color: var(--gold); font-size: 1.25rem; white-space: nowrap; }
+.profilkarte .pk-mehr { font-size: 0.85rem; letter-spacing: 0.04em; color: var(--gold-soft); white-space: nowrap; }
 
 .filterleiste { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; align-items: center; }
 .filterleiste .fl-label {
