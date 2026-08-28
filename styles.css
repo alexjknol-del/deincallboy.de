@@ -113,12 +113,12 @@ header.site .wrap {
   letter-spacing: 0.02em;
 }
 .brand-name em { font-style: normal; color: var(--gold); }
-.brand-sub { font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted-2); }
+.brand-sub { font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted-2); white-space: nowrap; }
 
 nav.main { display: flex; align-items: center; gap: 4px; }
 nav.main > .navitem { position: relative; }
 nav.main a.navlink {
-  display: block; padding: 10px 12px; font-size: 0.9rem; color: var(--text);
+  display: block; padding: 10px 10px; font-size: 0.88rem; color: var(--text);
   border-radius: var(--radius); white-space: nowrap;
 }
 nav.main a.navlink:hover, nav.main a.navlink.active { color: var(--gold-soft); background: var(--gold-dim); text-decoration: none; }
@@ -143,7 +143,7 @@ nav.main .submenu a:hover { background: var(--gold-dim); color: var(--gold-soft)
   cursor: pointer; letter-spacing: 0.05em;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1180px) {
   .navtoggle { display: block; }
   nav.main {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
@@ -443,3 +443,87 @@ footer.site p { color: var(--muted-2); font-size: 0.9rem; }
 .stat { border-left: 1px solid var(--line); padding-left: 20px; }
 .stat .n { font-family: var(--serif); font-size: 2.4rem; color: var(--gold); line-height: 1; margin-bottom: 8px; }
 .stat p { color: var(--muted); font-size: 0.92rem; margin: 0; }
+
+/* ---------- Musterprofile ---------- */
+
+.musterhinweis {
+  border: 1px solid rgba(201,162,83,.4); background: rgba(201,162,83,.08);
+  border-radius: var(--radius); padding: 16px 20px; margin: 0 0 30px;
+  display: flex; gap: 16px; align-items: flex-start; font-size: 0.92rem; color: var(--muted);
+}
+.musterhinweis .mh-badge {
+  flex: none; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--gold); border: 1px solid var(--gold); border-radius: 20px; padding: 4px 12px;
+  margin-top: 2px; white-space: nowrap;
+}
+.musterhinweis p { margin: 0; }
+.musterhinweis p + p { margin-top: 8px; }
+
+.memoji { width: 100%; height: auto; display: block; }
+
+.profilgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+@media (max-width: 940px) { .profilgrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .profilgrid { grid-template-columns: 1fr; } }
+
+.profilkarte {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 24px; display: flex; flex-direction: column; color: inherit; text-decoration: none;
+  position: relative;
+}
+.profilkarte:hover { border-color: #3a4152; text-decoration: none; }
+.profilkarte .pk-badge {
+  position: absolute; top: 14px; right: 14px; font-size: 0.62rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,162,83,.45);
+  border-radius: 20px; padding: 3px 9px; background: var(--bg);
+}
+.profilkarte .pk-bild { width: 104px; margin-bottom: 16px; }
+.profilkarte h3 { margin: 0 0 4px; font-size: 1.4rem; }
+.profilkarte .pk-meta { font-size: 0.88rem; color: var(--muted-2); margin-bottom: 12px; }
+.profilkarte .pk-text { color: var(--muted); font-size: 0.93rem; margin-bottom: 14px; }
+.profilkarte .pk-fuss {
+  margin-top: auto; display: flex; justify-content: space-between; align-items: center;
+  gap: 12px; border-top: 1px solid var(--line-soft); padding-top: 14px;
+}
+.profilkarte .pk-tarif { font-family: var(--serif); color: var(--gold); font-size: 1.25rem; }
+.profilkarte .pk-mehr { font-size: 0.85rem; letter-spacing: 0.04em; color: var(--gold-soft); }
+
+.filterleiste { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; align-items: center; }
+.filterleiste .fl-label {
+  font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted-2);
+  margin-right: 6px;
+}
+.filterleiste button {
+  background: transparent; border: 1px solid var(--line); color: var(--text);
+  border-radius: 20px; padding: 7px 16px; font-family: var(--sans); font-size: 0.86rem;
+  cursor: pointer;
+}
+.filterleiste button:hover { border-color: var(--gold); color: var(--gold-soft); }
+.filterleiste button[aria-pressed="true"] {
+  background: var(--gold-dim); border-color: var(--gold); color: var(--gold-soft);
+}
+.keintreffer { color: var(--muted); padding: 20px 0; }
+
+.profilkopf { display: grid; grid-template-columns: 190px 1fr; gap: 34px; align-items: start; margin-bottom: 8px; }
+@media (max-width: 640px) { .profilkopf { grid-template-columns: 1fr; gap: 22px; } .profilkopf .pk-bild { max-width: 190px; } }
+.profilkopf .pf-tarif {
+  font-family: var(--serif); font-size: 2.1rem; color: var(--gold); line-height: 1; margin-bottom: 6px;
+}
+.profilkopf .pf-tarif small { font-family: var(--sans); font-size: 0.9rem; color: var(--muted-2); }
+.sprachliste { display: flex; flex-wrap: wrap; gap: 6px; }
+.sprachliste span {
+  border: 1px solid var(--line); border-radius: 20px; padding: 3px 11px; font-size: 0.8rem;
+  color: var(--muted);
+}
+.profilnav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.profilnav a {
+  display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 8px 14px; font-size: 0.86rem; color: var(--text);
+}
+.profilnav a:hover { border-color: var(--gold); color: var(--gold-soft); text-decoration: none; }
+
+/* Mediävalziffern der Serifenschrift abschalten, Zahlen sollen normal hoch stehen */
+h1, h2, h3, .brand-name, .card .num, .stat .n, .newsitem .date,
+.profilkarte .pk-tarif, .profilkopf .pf-tarif, .steps li::before, .lexgroup > h2 {
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum" 1, "tnum" 1;
+}
